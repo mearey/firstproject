@@ -28,10 +28,16 @@ ypos = key_down - key_up;
 
 
 // Check if moving
-if key_left || key_right || key_down || key_up {
-	sprite_index = walk;
+if key_down {
+	sprite_index = walkup;
+} else if key_up {
+	sprite_index = walkdown;
+} else if key_right {
+	sprite_index = walkright;
+} else if key_left {
+	sprite_index = walkleft;	
 } else {
-	sprite_index = theGuy;
+	sprite_index = theGuy;	
 }
 var bbox_side;
 
